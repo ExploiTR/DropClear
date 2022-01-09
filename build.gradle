@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+group 'dbf.exploitr'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.7.1'
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainModule = 'dbf.exploitr.dropbox_fixer'
+    mainClass = 'dbf.exploitr.dropbox_fixer.HelloApplication'
+}
+
+javafx {
+    version = '11.0.2'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+}
